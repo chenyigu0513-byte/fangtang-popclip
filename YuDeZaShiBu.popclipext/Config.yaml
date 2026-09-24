@@ -1,0 +1,68 @@
+#popclip
+name: 方糖
+identifier: com.cangshu.popclip.yudezashibu
+description: 将选中内容分类收集到 Obsidian。
+icon: iconify:material-symbols:bookmark-add-outline
+requirements: [text]
+options:
+  - identifier: apikey
+    type: secret
+    label: DeepSeek API Key
+    description: 只在点击 AI 时使用，不会写入笔记或用量文件。
+  - identifier: vaultname
+    type: string
+    label: Obsidian 知识库名
+    defaultValue: ""
+  - identifier: filename
+    type: string
+    label: 目标笔记名
+    defaultValue: ""
+  - identifier: includesource
+    type: boolean
+    label: 包含来源
+    defaultValue: true
+  - identifier: monthlytokenlimit
+    type: string
+    label: 每月 token 上限
+    defaultValue: "100000"
+  - identifier: warningpercentage
+    type: string
+    label: 预警百分比
+    defaultValue: "80"
+actions:
+  - title: SOP
+    icon: scale=115 symbol:list.number
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=SOP exec ./scripts/capture.sh
+    after: show-result
+  - title: 技巧
+    icon: scale=115 symbol:lightbulb
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=技巧 exec ./scripts/capture.sh
+    after: show-result
+  - title: 案例
+    icon: scale=115 symbol:doc.text
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=案例 exec ./scripts/capture.sh
+    after: show-result
+  - title: 观点
+    icon: scale=115 symbol:quote.bubble
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=观点 exec ./scripts/capture.sh
+    after: show-result
+  - title: 灵感
+    icon: scale=115 symbol:sparkles
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=灵感 exec ./scripts/capture.sh
+    after: show-result
+  - title: 待整理
+    icon: scale=115 symbol:tray
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=待整理 exec ./scripts/capture.sh
+    after: show-result
+  - title: AI
+    icon: scale=125 monospaced Ai
+    interpreter: /bin/zsh
+    shell script: CAPTURE_TAG=AI exec ./scripts/capture.sh
+    long running: true
+    after: show-result
