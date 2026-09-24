@@ -4,7 +4,7 @@
 
 方糖是基于 PopClip 的 macOS 文字摘录扩展。选中文字后，选择一个标签，就能发起保存；也可以按需使用 DeepSeek 自动分类。
 
-> 首次公开发布准备中。请先按下方步骤完成安装和测试；正式下载链接与演示将在发布后补充。
+> [下载 v0.1.0 Beta 安装包](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.0-beta)。这是试用版，请先用测试文字确认写入。
 
 ## 能做什么
 
@@ -34,9 +34,9 @@
 
 可选：项目提供了 Obsidian 标签配色代码片段，让 SOP、技巧、案例、观点、灵感和待整理显示为不同颜色。安装方法见 [`obsidian/README.md`](obsidian/README.md)。
 
-## 当前源码安装方式
+## 安装
 
-获取项目源码后，打开 `YuDeZaShiBu.popclipext` 文件夹安装到 PopClip。扩展内显示名为“方糖”，技术目录名暂时沿用旧称。若系统无法直接识别文件夹，应等待经过验证的发布包，不将此路径视为已完成的新用户安装验证。
+从 [Releases](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.0-beta) 下载 `.popclipextz`，双击后在 PopClip 中确认安装。也可以下载源码，打开 `YuDeZaShiBu.popclipext` 文件夹安装；扩展内显示名为“方糖”，技术目录名暂时沿用旧称。
 
 在扩展设置中填写自己的知识库和笔记名。知识库名和目标笔记名需要在扩展设置中自行填写；未填写时不会发起保存。
 
@@ -87,4 +87,4 @@ Key 通过 PopClip 的 secret 设置读取，不写入源码或用量记录。�
 
 方糖 is a lightweight macOS text-capture extension for PopClip. It sends selected text to Obsidian with a category and available source information. Manual tagging works without an AI API request. Optional DeepSeek classification includes local usage tracking and a pre-request budget check.
 
-Requires PopClip, Obsidian, and the Advanced URI plugin. This project is being prepared for its first public release. A local budget check is not an account-wide spending limit, and opening an Obsidian URI does not confirm that the note was written.
+Requires PopClip, Obsidian, and the Advanced URI plugin. A beta release is available. A local budget check is not an account-wide spending limit, and opening an Obsidian URI does not confirm that the note was written.
