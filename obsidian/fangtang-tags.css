@@ -1,0 +1,50 @@
+/* Fangtang: six category colors, reading view + live preview/source mode.
+   Only these exact tag names are affected. No fonts or icon sizes are changed. */
+body {
+  --ft-sop-fg: #2456a6; --ft-sop-bg: #e8f0ff;
+  --ft-tip-fg: #146749; --ft-tip-bg: #e4f4eb;
+  --ft-case-fg: #995016; --ft-case-bg: #fff0df;
+  --ft-view-fg: #6941a5; --ft-view-bg: #f0e9fc;
+  --ft-idea-fg: #a13365; --ft-idea-bg: #fce8f0;
+  --ft-inbox-fg: #536174; --ft-inbox-bg: #edf0f4;
+}
+body.theme-dark {
+  --ft-sop-fg: #a6c8ff; --ft-sop-bg: #23364f;
+  --ft-tip-fg: #98ddbb; --ft-tip-bg: #203e32;
+  --ft-case-fg: #ffca92; --ft-case-bg: #493421;
+  --ft-view-fg: #cfb4ff; --ft-view-bg: #38294d;
+  --ft-idea-fg: #ffb0d0; --ft-idea-bg: #4a293b;
+  --ft-inbox-fg: #c0ccdb; --ft-inbox-bg: #303944;
+}
+:is(a.tag[href="#SOP"], .cm-hashtag.cm-tag-SOP) {
+  --ft-tag-fg: var(--ft-sop-fg); --ft-tag-bg: var(--ft-sop-bg);
+}
+:is(a.tag[href="#技巧"], .cm-hashtag.cm-tag-技巧) {
+  --ft-tag-fg: var(--ft-tip-fg); --ft-tag-bg: var(--ft-tip-bg);
+}
+:is(a.tag[href="#案例"], .cm-hashtag.cm-tag-案例) {
+  --ft-tag-fg: var(--ft-case-fg); --ft-tag-bg: var(--ft-case-bg);
+}
+:is(a.tag[href="#观点"], .cm-hashtag.cm-tag-观点) {
+  --ft-tag-fg: var(--ft-view-fg); --ft-tag-bg: var(--ft-view-bg);
+}
+:is(a.tag[href="#灵感"], .cm-hashtag.cm-tag-灵感) {
+  --ft-tag-fg: var(--ft-idea-fg); --ft-tag-bg: var(--ft-idea-bg);
+}
+:is(a.tag[href="#待整理"], .cm-hashtag.cm-tag-待整理) {
+  --ft-tag-fg: var(--ft-inbox-fg); --ft-tag-bg: var(--ft-inbox-bg);
+}
+body :is(
+  a.tag[href="#SOP"], a.tag[href="#技巧"], a.tag[href="#案例"],
+  a.tag[href="#观点"], a.tag[href="#灵感"], a.tag[href="#待整理"],
+  .cm-hashtag.cm-tag-SOP, .cm-hashtag.cm-tag-技巧, .cm-hashtag.cm-tag-案例,
+  .cm-hashtag.cm-tag-观点, .cm-hashtag.cm-tag-灵感, .cm-hashtag.cm-tag-待整理
+) {
+  color: var(--ft-tag-fg) !important;
+  background-color: var(--ft-tag-bg) !important;
+  --tag-color: var(--ft-tag-fg);
+  --tag-color-hover: var(--ft-tag-fg);
+  --tag-background: var(--ft-tag-bg);
+  --tag-background-hover: var(--ft-tag-bg);
+  font-weight: 600;
+}
