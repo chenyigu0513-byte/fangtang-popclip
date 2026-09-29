@@ -120,13 +120,14 @@ test_manual_browser_capture() {
   case_dir="$(new_case manual-browser)"
   result="$case_dir/result.txt"
 
-  run_capture "$case_dir" "技巧" $'第一行\n第二行' "$result" \
+  run_capture "$case_dir" "技巧" $'第一行\n第二行\n\n第三段' "$result" \
     POPCLIP_BROWSER_URL="https://example.com/a?b=1&c=2" \
     POPCLIP_BROWSER_TITLE="示例 [页面]"
 
   assert_contains "$case_dir/captured.md" "#技巧" "手动动作写入正确标签"
-  assert_contains "$case_dir/captured.md" "  > 第一行" "多行摘录第一行使用引用格式"
-  assert_contains "$case_dir/captured.md" "  > 第二行" "多行摘录第二行使用引用格式"
+  assert_contains "$case_dir/captured.md" "  > 第一行  " "多行摘录第一行保留可见换行"
+  assert_contains "$case_dir/captured.md" "  > 第二行  " "多行摘录第二行保留可见换行"
+  assert_contains "$case_dir/captured.md" "  > 第三段  " "空行后的段落仍保留"
   assert_contains "$case_dir/captured.md" '[来源：示例 \[页面\]](<https://example.com/a?b=1&c=2>)' "网页来源被保留并转义标题"
   [[ ! -e "$case_dir/curl-called" ]] && pass "手动动作不调用 DeepSeek" || fail "手动动作不应调用 DeepSeek"
   [[ ! -e "$case_dir/state/usage.json" ]] && pass "手动动作不创建 AI 用量文件" || fail "手动动作不应创建 AI 用量文件"
