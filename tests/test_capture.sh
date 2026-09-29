@@ -155,6 +155,7 @@ test_daily_heading_groups_captures() {
   assert_contains "$case_dir/captured.md" "## 2026年9月20日 · 星期日" "当天首条写入日期标题"
   assert_contains "$case_dir/captured.md" "- 10:51 #案例" "当天首条保留时间"
   assert_contains "$case_dir/captured.md.uri" "mode=prepend" "新日期插入笔记顶部"
+  assert_contains "$case_dir/captured.md.uri" "openmode=silent" "新日期后台写入不触发光标定位"
   assert_not_contains "$case_dir/captured.md.uri" "&heading=" "新日期整体插入而非定位旧标题"
   assert_equals "$(state_value "$case_dir/state/capture.json" lastCaptureDate)" "2026-09-20" "首条记录保存当天日期标记"
 
@@ -162,6 +163,7 @@ test_daily_heading_groups_captures() {
   assert_not_contains "$case_dir/captured.md" "## 2026年9月20日" "同一天后续内容不重复日期标题"
   assert_contains "$case_dir/captured.md" "- 14:30 #技巧" "同一天后续内容只显示时间"
   assert_contains "$case_dir/captured.md.uri" "mode=append" "同一天新记录追加到当日分组末尾"
+  assert_contains "$case_dir/captured.md.uri" "openmode=silent" "同日后台写入不触发光标定位"
   local decoded_uri
   decoded_uri="$(/usr/bin/perl -MURI::Escape -0777 -ne 'print uri_unescape($_)' "$case_dir/captured.md.uri")"
   assert_equals "${decoded_uri##*&heading=}" "2026年9月20日 · 星期日" "同日新记录定位到日期标题内部"
