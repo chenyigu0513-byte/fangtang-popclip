@@ -132,7 +132,7 @@ format_markdown() {
   local tag="$1"
   local timestamp quoted source title entry_prefix
   timestamp="$($DATE_BIN '+%H:%M')"
-  quoted="$(printf '%s' "$SELECTED_TEXT" | /usr/bin/sed 's/^/  > /')"
+  quoted="$(printf '%s' "$SELECTED_TEXT" | "$PERL_BIN" -0777 -pe 's/\r\n?/\n/g; s/\n+\z//; s/[ \t]+$//mg; s/^/  > /mg; s/(?<=\S)$/  /mg')"
   source=""
 
   if (( CAPTURE_DATETIME_FALLBACK == 1 )); then
