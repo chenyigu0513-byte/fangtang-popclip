@@ -4,7 +4,7 @@
 
 方糖是基于 PopClip 的 macOS 文字摘录扩展。选中文字后，选择一个标签，就能发起保存；也可以按需使用 DeepSeek 自动分类。
 
-> [下载 v0.1.0 Beta 安装包](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.0-beta)。这是试用版，请先用测试文字确认写入。
+> [下载 v0.1.1 Beta 安装包](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.1-beta)。这是试用版，请先用测试文字确认写入。
 
 ## 能做什么
 
@@ -36,11 +36,13 @@
 
 ## 安装
 
-从 [Releases](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.0-beta) 下载 `.popclipextz`，双击后在 PopClip 中确认安装。也可以下载源码，打开 `YuDeZaShiBu.popclipext` 文件夹安装；扩展内显示名为“方糖”，技术目录名暂时沿用旧称。
+从 [Releases](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.1-beta) 下载 `.popclipextz`，双击后在 PopClip 中确认安装。也可以下载源码，打开 `YuDeZaShiBu.popclipext` 文件夹安装；扩展内显示名为“方糖”，技术目录名暂时沿用旧称。
 
 在扩展设置中填写自己的知识库和笔记名。知识库名和目标笔记名需要在扩展设置中自行填写；未填写时不会发起保存。
 
 先选一小段测试文字，用手动标签保存，并进入 Obsidian 确认内容实际出现，再开始日常使用。
+
+保存时方糖会在后台发起写入，不会自动切换到 Obsidian 或移动笔记光标；需要核对结果时，请手动打开目标笔记。
 
 如果希望让 Codex 协助安装，可以把本仓库地址发给它，并说明：请检查 `YuDeZaShiBu.popclipext` 的配置、指导我在 Obsidian 启用 Advanced URI、安装扩展，并协助我完成一次测试保存。知识库名和目标笔记名由我在本机确认，DeepSeek API Key 只在 PopClip 设置中填写，不发送到聊天或提交到仓库。安装完成后可按自己的标签习惯修改 `Config.yaml`，再重新安装扩展。
 
