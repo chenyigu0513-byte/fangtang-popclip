@@ -4,12 +4,13 @@
 
 方糖是基于 PopClip 的 macOS 文字摘录扩展。选中文字后，选择一个标签，就能发起保存；也可以按需使用 DeepSeek 自动分类。
 
-> [下载 v0.1.1 Beta 安装包](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.1-beta)。这是试用版，请先用测试文字确认写入。
+> [下载 v0.1.2 Beta 安装包](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.2-beta)。这是试用版，请先用测试文字确认写入。
 
 ## 能做什么
 
 - 手动分类：SOP、技巧、案例、观点、灵感、待整理。
 - 保存选中原文，并在可获取时保留网页来源或应用名。
+- 保留选中文本中的换行和段落间隔。
 - 当天首条加入日期标题，每条包含时间和标签。
 - 可选 AI 分类：从六种标签里选一类，不改写原文。
 - 本地月度 token 计数、预警和请求前额度检查。
@@ -36,7 +37,7 @@
 
 ## 安装
 
-从 [Releases](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.1-beta) 下载 `.popclipextz`，双击后在 PopClip 中确认安装。也可以下载源码，打开 `YuDeZaShiBu.popclipext` 文件夹安装；扩展内显示名为“方糖”，技术目录名暂时沿用旧称。
+从 [Releases](https://github.com/chenyigu0513-byte/fangtang-popclip/releases/tag/v0.1.2-beta) 下载 `.popclipextz`，双击后在 PopClip 中确认安装。也可以下载源码，打开 `YuDeZaShiBu.popclipext` 文件夹安装；扩展内显示名为“方糖”，技术目录名暂时沿用旧称。
 
 在扩展设置中填写自己的知识库和笔记名。知识库名和目标笔记名需要在扩展设置中自行填写；未填写时不会发起保存。
 
@@ -73,7 +74,7 @@ Key 通过 PopClip 的 secret 设置读取，不写入源码或用量记录。�
 /bin/zsh tests/test_capture.sh
 ```
 
-当前模拟测试结果：59 项断言通过，0 失败（2026-09-29）。测试替换了网络和打开笔记的操作，不调用真实 API。真实应用兼容性与新用户安装仍需另行验证。
+当前模拟测试结果：60 项断言通过，0 失败（2026-09-29）。测试替换了网络和打开笔记的操作，不调用真实 API。真实应用兼容性与新用户安装仍需另行验证。
 
 代码集中在 `YuDeZaShiBu.popclipext/`，测试位于 `tests/`。技术标识沿用旧名，以避免随意迁移本地用量状态。
 
