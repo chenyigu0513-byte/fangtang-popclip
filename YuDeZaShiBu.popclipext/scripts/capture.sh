@@ -182,7 +182,7 @@ append_to_obsidian() {
   # captures are appended below it.
   write_mode="prepend"
   [[ -n "$CAPTURE_TARGET_HEADING" ]] && write_mode="append"
-  uri="obsidian://advanced-uri?vault=${vault_encoded}&filepath=${file_encoded}&data=${data_encoded}&mode=${write_mode}"
+  uri="obsidian://advanced-uri?vault=${vault_encoded}&filepath=${file_encoded}&data=${data_encoded}&mode=${write_mode}&openmode=silent"
   if [[ -n "$CAPTURE_TARGET_HEADING" ]]; then
     heading_encoded="$(url_encode "$CAPTURE_TARGET_HEADING")" || return 1
     uri="${uri}&heading=${heading_encoded}"
